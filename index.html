@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paina Lakshmana Rao | Cybersecurity Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #eaf4ff;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            background: rgba(7, 17, 31, 0.92);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #19334d;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #dbeafe;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 100px 8%;
+        }
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at top right, #12395a, transparent 35%),
+                radial-gradient(circle at bottom left, #0b3150, transparent 35%),
+                #07111f;
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #06101d;
+            background: #38bdf8;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+        }
+
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 35px;
+            background: #0c1b2d;
+            border: 1px solid #19334d;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #0c1b2d;
+            border: 1px solid #19334d;
+            padding: 25px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .card p,
+        .card li {
+            color: #b8c7d9;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .interest {
+            display: inline-block;
+            padding: 12px 18px;
+            margin: 8px;
+            border: 1px solid #24506f;
+            border-radius: 25px;
+            color: #bae6fd;
+            background: #0c1b2d;
+        }
+
+        .experience-card {
+            margin-bottom: 25px;
+        }
+
+        .experience-card h3 {
+            font-size: 22px;
+        }
+
+        .experience-card h4 {
+            color: #94a3b8;
+            margin-bottom: 12px;
+        }
+
+        .project-box {
+            text-align: center;
+            padding: 40px;
+            border: 1px dashed #24506f;
+            border-radius: 18px;
+            background: #0c1b2d;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 12px 0;
+            color: #cbd5e1;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #19334d;
+            color: #64748b;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            section {
+                padding: 90px 5%;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Lakshman.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="hero">
+
+            <h1>Hi, I'm <span>Lakshman</span></h1>
+
+            <h2>Cybersecurity Engineering Student</h2>
+
+            <p>
+                Exploring Ethical Hacking, Web Application Security,
+                Penetration Testing, Network Security and Security Research.
+            </p>
+
+            <a href="#about" class="btn">Explore My Portfolio</a>
+
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Cybersecurity enthusiast focused on practical learning</p>
+        </div>
+
+        <div class="about-box">
+
+            <p>
+                I am a cybersecurity-focused engineering student with practical
+                internship exposure in web application security assessment,
+                penetration testing and cybersecurity fundamentals.
+            </p>
+
+            <br>
+
+            <p>
+                I am interested in ethical hacking, web application security,
+                network security, security research and cybersecurity automation.
+                I continuously develop my practical skills through internships,
+                technical learning and hands-on security practice.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>Technical Skills</h2>
+            <p>Technologies and areas I work with</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Programming</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Web Technologies</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Networking</h3>
+                <ul>
+                    <li>Computer Networking</li>
+                    <li>Network Security Fundamentals</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Operating System</h3>
+                <ul>
+                    <li>Linux</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Interests -->
+    <section>
+
+        <div class="section-title">
+            <h2>Areas of Interest</h2>
+        </div>
+
+        <div style="text-align:center;">
+
+            <span class="interest">Ethical Hacking</span>
+            <span class="interest">Web Application Security</span>
+            <span class="interest">Penetration Testing</span>
+            <span class="interest">Network Security</span>
+            <span class="interest">Security Research</span>
+            <span class="interest">Cybersecurity Automation</span>
+
+        </div>
+
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+
+        <div class="section-title">
+            <h2>Internship Experience</h2>
+            <p>Practical exposure and professional learning</p>
+        </div>
+
+        <div class="card experience-card">
+
+            <h3>Cybersecurity Intern — Supraja Technologies</h3>
+
+            <h4>Web Application Assessment & Penetration Testing</h4>
+
+            <ul>
+                <li>Gained practical exposure to web application security assessment.</li>
+                <li>Learned penetration testing methodologies and security testing workflows.</li>
+                <li>Assisted in identifying and understanding potential security weaknesses.</li>
+                <li>Developed practical knowledge of web application security.</li>
+                <li>Strengthened understanding of vulnerability assessment practices.</li>
+            </ul>
+
+        </div>
+
+        <div class="card experience-card">
+
+            <h3>Cybersecurity Intern — Decodelabs</h3>
+
+            <ul>
+                <li>Gained practical exposure to cybersecurity concepts.</li>
+                <li>Developed understanding of security-focused workflows.</li>
+                <li>Strengthened knowledge of cybersecurity assessment practices and fundamentals.</li>
+            </ul>
+
+        </div>
+
+        <div class="card experience-card">
+
+            <h3>Virtual Stock Market Research Analyst Intern — Yuvalntern</h3>
+
+            <ul>
+                <li>Conducted market-oriented research.</li>
+                <li>Reviewed market trends and relevant information.</li>
+                <li>Developed analytical and research skills.</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- Education -->
+    <section>
+
+        <div class="section-title">
+            <h2>Education</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Swami Vivekananda Institute of Technology</h3>
+                <p>Engineering</p>
+            </div>
+
+            <div class="card">
+                <h3>Resonance Junior College</h3>
+                <p>Intermediate</p>
+            </div>
+
+            <div class="card">
+                <h3>Gowtham Model School</h3>
+                <p>School Education</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Achievements -->
+    <section>
+
+        <div class="section-title">
+            <h2>Achievements & Activities</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Smart India Hackathon</h3>
+                <p>
+                    Participated in the national-level innovation and
+                    problem-solving hackathon.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>UiPath Workshop</h3>
+                <p>
+                    Attended a hands-on workshop exploring automation concepts
+                    and emerging technology applications.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Cybersecurity Development</h3>
+                <p>
+                    Continuously developing practical cybersecurity knowledge
+                    through internships, technical learning and hands-on practice.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>Practical work and security research</p>
+        </div>
+
+        <div class="project-box">
+
+            <h3>🚀 Projects Coming Soon</h3>
+
+            <p>
+                Cybersecurity, web security, Python and security research
+                projects will be added here as they are developed.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Let's connect</p>
+        </div>
+
+        <div class="contact">
+
+            <p>
+                📧
+                <a href="mailto:painalakshman820@gmail.com">
+                    painalakshman820@gmail.com
+                </a>
+            </p>
+
+            <p>📍 Secunderabad, Telangana, India</p>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Paina Lakshmana Rao | Cybersecurity Portfolio</p>
+    </footer>
+
+</body>
+</html>
